@@ -1219,13 +1219,8 @@ def display_quiz():
                     st.rerun()
                     
         with nav_col3:
-            # Jump to question
-            jump_to = st.selectbox("Jump to:", range(1, total_questions + 1), 
-                                 value=current_q_index + 1, key="jump_select")
-            if st.button("Go"):
-                store_current_answer()
-                st.session_state.current_question = jump_to - 1
-                st.rerun()
+            # Question counter
+            st.write(f"Question {current_q_index + 1} of {total_questions}")
 
         with nav_col4:
             if answered_count >= total_questions:
